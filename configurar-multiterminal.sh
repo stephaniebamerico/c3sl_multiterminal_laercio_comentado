@@ -1,6 +1,6 @@
 #!/bin/bash
 
-install systemd/xorg@s* /etc/systemd/system
+install systemd/xorg@.s* /etc/systemd/system
 install -m 644 udev/* /etc/udev/rules.d
 
 install -d /etc/X11/xorg.conf.d
