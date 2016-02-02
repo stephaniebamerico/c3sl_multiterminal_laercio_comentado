@@ -12,10 +12,5 @@ done
 apt update
 apt install libpam-mount
 
-for s in login lightdm lightdm-autologin
-do
-    pam-config --service ${s} -a --mount
-done
-
 install -m 755 mount-wrapper /usr/local/sbin
 install -m 644 pam_mount.conf.xml /etc/security
