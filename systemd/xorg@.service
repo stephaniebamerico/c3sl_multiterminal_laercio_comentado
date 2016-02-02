@@ -1,0 +1,7 @@
+[Unit]
+Description=Service for Xorg server at display :%i
+
+[Service]
+ExecStartPre=/bin/sh -c "if [ -f /etc/X11/xorg.conf.d/99-tn502.conf ]; then sed -i 's/\(^.*BusID \"PCI:\).*\(\"\)/\1'$(lspci | grep SM501 | cut -d\  -f1 | tr . :)'\2/' /etc/X11/xorg.conf.d/99-tn502.conf; fi"
+ExecStart=/usr/bin/X :%i -seat __fake-seat__ -dpms -s 0 -nocursor
+SuccessExitStatus=0 1

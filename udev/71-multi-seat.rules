@@ -1,0 +1,23 @@
+#GOTO="2_seats_1_hub"
+#GOTO="2_seats_2_hubs"
+GOTO="3_seats_2_hubs"
+#GOTO="3_seats_3_hubs"
+#GOTO="5_seats"
+
+LABEL="2_seats_1_hub"
+SUBSYSTEM=="usb", ATTR{idVendor}=="05e3", ATTR{idProduct}=="0608", TAG+="master-of-seat", ENV{ID_AUTOSEAT}="1", ENV{ID_FOR_SEAT}="tn502", GOTO="multi_seat_end"
+
+LABEL="2_seats_2_hubs"
+SUBSYSTEMS=="pci", ATTR{vendor}=="0x126f", ATTR{device}=="0x0501", TAG+="seat", TAG+="master-of-seat", ENV{ID_AUTOSEAT}="1", ENV{ID_FOR_SEAT}="tn502", GOTO="multi_seat_end"
+
+LABEL="3_seats_2_hubs"
+SUBSYSTEM=="usb", ATTR{idVendor}=="05e3", ATTR{idProduct}=="0608", TAG+="master-of-seat", ENV{ID_AUTOSEAT}="1", GOTO="multi_seat_end"
+
+LABEL="3_seats_3_hubs"
+SUBSYSTEMS=="pci", ATTR{vendor}=="0x126f", ATTR{device}=="0x0501", TAG+="seat", TAG+="master-of-seat", ENV{ID_AUTOSEAT}="1", ENV{ID_FOR_SEAT}="usb2"
+SUBSYSTEM=="usb", ATTR{idVendor}=="05e3", ATTR{idProduct}=="0608", TAG+="master-of-seat", GOTO="multi_seat_end"
+
+LABEL="5_seats"
+SUBSYSTEM=="usb", ATTR{idVendor}=="05e3", ATTR{idProduct}=="0608", TAG+="master-of-seat", ENV{ID_AUTOSEAT}="1"
+
+LABEL="multi_seat_end"
