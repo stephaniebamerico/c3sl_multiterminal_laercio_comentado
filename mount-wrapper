@@ -1,0 +1,13 @@
+#!/bin/bash
+
+for arg in "${@}"
+do
+    case "${arg}" in
+    -toverlay)
+        mkdir ${!#}/{upper,work}
+        chown $(stat -c '%U:%G' ${!#}) ${!#}/{upper,work}
+        ;;
+    esac
+done
+
+exec mount "${@}"
