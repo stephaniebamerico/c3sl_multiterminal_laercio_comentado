@@ -11,8 +11,8 @@ install -m 644 lightdm/* /etc/lightdm/lightdm.conf.d
 
 install -m 644 autostart/compton.desktop /etc/xdg/autostart
 
-systemctl enable xorg@90.socket
-systemctl start xorg@90.socket
+systemctl enable xorg@90.service
+systemctl start xorg@90.service
 
 apt-add-repository ppa:ubuntu-multiseat/ppa
 apt update
