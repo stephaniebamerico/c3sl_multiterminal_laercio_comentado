@@ -14,7 +14,8 @@ systemctl start xorg@90.socket
 
 apt-add-repository ppa:ubuntu-multiseat/ppa
 apt update
-apt install xserver-xorg-video-siliconmotion xserver-xephyr
+apt -y upgrade
+apt -y install xserver-xorg-video-siliconmotion xserver-xephyr
 
 udevadm trigger
 systemctl restart lightdm
