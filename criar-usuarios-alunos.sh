@@ -11,7 +11,7 @@ do
 done
 
 apt update
-apt -y install libpam-mount
+apt -y install libpam-mount bindfs
 
 install -m 755 mount-wrapper /usr/local/sbin
 install -m 644 pam_mount.conf.xml /etc/security
