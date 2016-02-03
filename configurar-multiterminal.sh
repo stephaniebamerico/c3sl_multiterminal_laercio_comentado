@@ -10,6 +10,7 @@ install -d /etc/lightdm/lightdm.conf.d
 install -m 644 lightdm/* /etc/lightdm/lightdm.conf.d
 
 install -m 644 autostart/compton.desktop /etc/xdg/autostart
+install -m 755 xephyr-wrapper /usr/local/bin
 
 systemctl enable xorg@90.service
 systemctl start xorg@90.service
