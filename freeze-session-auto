@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Não executar este script para o próprio usuário freezetemplate
+[ "${USER}" = "freezetemplate" ] && exit 0
+
+[ "$(ls -A ${HOME}/.cache/sessions)" ] && rm ${HOME}/.cache/sessions/*
+
+for i in ${HOME}/.xfce4-session.verbose-log* \
+         ${HOME}/.xsession-errors*
+do
+    [ -f ${i} ] && rm ${i}
+done
+
+for i in ${HOME}/.pki/nssdb/pkcs11.txt \
+         ${HOME}/.config/chromium/Default/Preferences \
+         ${HOME}/.config/xfce4/desktop/icons.screen*.rc
+do
+    [ -f ${i} ] && sed -i -e "s@/home/freezetemplate@${HOME}@g" ${i}
+done
+
+for i in ${HOME}/.wine/userdef.reg \
+         ${HOME}/.wine/user.reg
+do
+    [ -f ${i} ] && sed -i -e "s@freezetemplate@${USER}@g" ${i}
+done
