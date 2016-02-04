@@ -6,9 +6,8 @@ install -m 644 udev/* /etc/udev/rules.d
 install -d /etc/X11/xorg.conf.d
 install -m 644 xorg/* /etc/X11/xorg.conf.d
 
-install -d /etc/lightdm/lightdm.conf.d
-install -m 644 lightdm/* /etc/lightdm/lightdm.conf.d
-
+install -d /etc/xdg/lightdm/lightdm.conf.d
+install -m 644 lightdm/xephyr* /etc/xdg/lightdm/lightdm.conf.d
 install -m 644 autostart/compton.desktop /etc/xdg/autostart
 install -m 755 xephyr-wrapper /usr/local/bin
 
