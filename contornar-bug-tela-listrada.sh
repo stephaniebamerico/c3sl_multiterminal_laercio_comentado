@@ -8,7 +8,6 @@ do
     if echo "${linha}" | grep "menuentry.*Linux Educacional 5.0" >/dev/null
     then
         particao=$(echo ${linha} | cut -d' ' -f7 | cut -d')' -f1)
-        echo ${indice} ${particao}
         le5_encontrado=true
         break
     else
