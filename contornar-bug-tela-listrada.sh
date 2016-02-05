@@ -30,8 +30,7 @@ install -m 644 systemd/le-nextboot-* /etc/systemd/system
 systemctl enable le-nextboot-read-write@${indice}
 systemctl enable le-nextboot-reboot
 
-systemctl start le-nextboot-read-write@${indice}
-systemctl start le-nextboot-reboot
+grub-reboot ${indice}
 
 mount ${particao} /mnt
 install -m 644 userful/* /mnt/etc/userful
