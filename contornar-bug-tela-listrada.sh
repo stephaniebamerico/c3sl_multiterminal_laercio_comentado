@@ -33,7 +33,8 @@ systemctl enable le-nextboot-reboot
 grub-reboot ${indice}
 
 mount ${particao} /mnt
-install -m 644 userful/* /mnt/etc/userful
+install -m 644 userful/auto_login.conf /mnt/etc/userful
+install -m 755 userful/auto-reboot /mnt/usr/local/bin
 umount /mnt
 
 echo
