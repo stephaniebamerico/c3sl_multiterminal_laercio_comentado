@@ -12,4 +12,4 @@ systemctl start systemd-networkd
 systemctl start systemd-networkd-wait-online
 systemctl start systemd-resolved
 
-ls -sf /var/run/systemd/resolve/resolv.conf /etc/resolv.conf
+ln -sf /var/run/systemd/resolve/resolv.conf /etc/resolv.conf
