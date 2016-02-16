@@ -3,7 +3,7 @@
 addgroup freeze
 adduser --gecos "Modelo para Freeze" --shell /bin/bash freezetemplate
 
-for i in 1 2 3
+for i in 0 1 2 3 4
 do
     adduser --disabled-login --gecos "Aluno #${i}" --shell /bin/bash aluno${i}
     adduser aluno${i} freeze
