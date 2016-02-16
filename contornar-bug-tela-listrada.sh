@@ -39,7 +39,7 @@ then
 fi
 
 echo
-echo "[INFO] Partição do Linux Educacional 5.0 encontrada em ${partição}."
+echo "[INFO] Partição do Linux Educacional 5.0 encontrada em ${particao}."
 echo "       Índice correspondente no menu do GRUB: ${indice}."
 
 install -m 644 systemd/le-nextboot-* /etc/systemd/system
