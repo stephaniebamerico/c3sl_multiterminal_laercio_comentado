@@ -1,3 +1,3 @@
 #!/bin/bash
 export DISPLAY=${DISPLAY:-:90}
-exec Xephyr -sw-cursor -dpi 96 -xkbrules evdev -xkblayout br -xkbmodel abnt2 "${@}"
+exec Xephyr -xkb-rules evdev -xkb-layout br -xkb-model abnt2 "${@}"
