@@ -1,11 +1,16 @@
 #!/bin/bash
-export DISPLAY=${DISPLAY:-:90}
+DISPLAY=${DISPLAY:-:90}
+case "${0}" in
+    *-0) DISPLAY="${DISPLAY}.0" ;;
+    *-1) DISPLAY="${DISPLAY}.1" ;;
+esac
+export DISPLAY
 
 # Por algum problema desconhecido do Ubuntu,
 # o primeiro cliente a requisitar a ativação
 # por socket do servidor Xorg hospedeiro
 # fica aguardando eternamente. O truque
-# abaixo contorna o problema para que o
+# abaixo contorna este problema, para que o
 # Xephyr possa ser executado corretamente.
 xwininfo -root >/dev/null &
 sleep 1

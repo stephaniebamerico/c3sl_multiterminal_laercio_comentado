@@ -9,7 +9,10 @@ install -m 644 xorg/* /etc/X11/xorg.conf.d
 install -d /etc/xdg/lightdm/lightdm.conf.d
 install -m 644 lightdm/xephyr*.conf /etc/xdg/lightdm/lightdm.conf.d
 install -m 644 lightdm/autologin.conf /etc/xdg/lightdm/lightdm.conf.d
+
 install -m 755 xephyr-wrapper /usr/local/bin
+ln -s xephyr-wrapper /usr/local/bin/xephyr-wrapper-0
+ln -s xephyr-wrapper /usr/local/bin/xephyr-wrapper-1
 
 systemctl enable xorg@90.socket
 systemctl start xorg@90.socket
