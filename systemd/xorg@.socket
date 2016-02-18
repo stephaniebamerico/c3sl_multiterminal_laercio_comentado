@@ -1,8 +1,8 @@
 [Unit]
-Description=Socket for Xorg server at display :%i
+Description=Socket for Xorg server at display :90 (profile "proinfo-%i")
 
 [Socket]
-ListenStream=/tmp/.X11-unix/X%i
+ListenStream=/tmp/.X11-unix/X90
 
 [Install]
 WantedBy=sockets.target
