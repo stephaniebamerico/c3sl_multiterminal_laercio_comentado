@@ -1,0 +1,14 @@
+#!/bin/bash
+xorgconf=/etc/X11/xorg.conf.d/99-tn502.conf
+if [ ! -f ${xorgconf} -a -f ${xorgconf}.in ]
+then
+    index=0
+    cp ${xorgconf}.in ${xorgconf}
+    while read -r line
+    do
+        address=$(echo "${line}" | cut -d' ' -f1 | tr . :)
+        echo TN502_ADDRESS_${index} = ${address}
+        sed -i "s/@TN502_ADDRESS_${index}@/${address}/" ${xorgconf}
+        index=$(( index + 1 ))
+    done < <(lspci | grep SM501)
+fi

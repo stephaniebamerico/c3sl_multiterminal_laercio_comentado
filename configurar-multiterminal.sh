@@ -4,7 +4,8 @@ install -m 644 systemd/xorg@.s* /etc/systemd/system
 install -m 644 udev/* /etc/udev/rules.d
 
 install -d /etc/X11/xorg.conf.d
-install -m 644 xorg/* /etc/X11/xorg.conf.d
+install -m 644 xorg/99-tn502.conf.in /etc/X11/xorg.conf.d
+install -m 755 update-xorg-conf /usr/local/bin
 
 install -d /etc/xdg/lightdm/lightdm.conf.d
 install -m 644 lightdm/xephyr*.conf /etc/xdg/lightdm/lightdm.conf.d
@@ -14,8 +15,9 @@ install -m 755 xephyr-wrapper /usr/local/bin
 ln -s xephyr-wrapper /usr/local/bin/xephyr-wrapper-0
 ln -s xephyr-wrapper /usr/local/bin/xephyr-wrapper-1
 
-systemctl enable xorg@90.socket
-systemctl start xorg@90.socket
+update-xorg-conf
+systemctl enable xorg@urbano.socket
+systemctl start xorg@urbano.socket
 
 apt-add-repository ppa:ubuntu-multiseat/ppa
 apt update

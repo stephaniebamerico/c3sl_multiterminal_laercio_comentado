@@ -9,7 +9,8 @@ Section "Monitor"
 EndSection
 
 Section "Device"
-    MatchSeat "__fake-seat__"
+    MatchSeat "__fake-seat-proinfo-urbano__"
+    MatchSeat "__fake-seat-proinfo-rural__"
     Identifier "ThinNetworks TN-502 PCI Video Card 0"
     BusID "PCI:@TN502_ADDRESS_0@"
     Driver "siliconmotion"
@@ -20,7 +21,7 @@ Section "Device"
 EndSection
 
 Section "Device"
-    MatchSeat "__fake-seat__"
+    MatchSeat "__fake-seat-proinfo-rural__"
     Identifier "ThinNetworks TN-502 PCI Video Card 1"
     BusID "PCI:@TN502_ADDRESS_1@"
     Driver "siliconmotion"
@@ -31,21 +32,22 @@ Section "Device"
 EndSection
 
 Section "Screen"
-    MatchSeat "__fake-seat__"
+    MatchSeat "__fake-seat-proinfo-urbano__"
+    MatchSeat "__fake-seat-proinfo-rural__"
     Identifier "ThinNetworks TN-502 Screen 0"
     Device "ThinNetworks TN-502 PCI Video Card 0"
     DefaultDepth 16
 EndSection
 
 Section "Screen"
-    MatchSeat "__fake-seat__"
+    MatchSeat "__fake-seat-proinfo-rural__"
     Identifier "ThinNetworks TN-502 Screen 1"
     Device "ThinNetworks TN-502 PCI Video Card 1"
     DefaultDepth 16
 EndSection
 
 Section "ServerLayout"
-    MatchSeat "__fake-seat__"
+    MatchSeat "__fake-seat-proinfo-rural__"
     Identifier "ThinNetworks TN-502 Dual-Card Layout"
     Screen 0 "ThinNetworks TN-502 Screen 0"
     Screen 1 "ThinNetworks TN-502 Screen 1"
