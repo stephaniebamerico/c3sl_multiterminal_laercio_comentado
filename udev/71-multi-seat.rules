@@ -15,7 +15,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="05e3", ATTR{idProduct}=="0608", TAG+="master-
 
 LABEL="3_seats_3_hubs"
 SUBSYSTEM!="usb", GOTO="multi_seat_end"
-SUBSYSTEM=="usb", ATTR{idVendor}=="05e3", ATTR{idProduct}=="0608", TAG+="master-of-seat", EVN{ID_AUTOSEAT}="1"
+SUBSYSTEM=="usb", ATTR{idVendor}=="05e3", ATTR{idProduct}=="0608", TAG+="master-of-seat"
 
 LABEL="2_seats_2_hubs"
 SUBSYSTEMS!="pci", GOTO="multi_seat_end"
