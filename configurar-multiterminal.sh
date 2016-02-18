@@ -11,8 +11,8 @@ install -m 644 lightdm/xephyr*.conf /etc/xdg/lightdm/lightdm.conf.d
 install -m 644 lightdm/autologin.conf /etc/xdg/lightdm/lightdm.conf.d
 install -m 755 xephyr-wrapper /usr/local/bin
 
-systemctl enable xorg@90.service
-systemctl start xorg@90.service
+systemctl enable xorg@90.socket
+systemctl start xorg@90.socket
 
 apt-add-repository ppa:ubuntu-multiseat/ppa
 apt update
