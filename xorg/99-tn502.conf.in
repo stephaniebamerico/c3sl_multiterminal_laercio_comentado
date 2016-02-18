@@ -33,6 +33,12 @@ EndSection
 
 Section "Screen"
     MatchSeat "__fake-seat-proinfo-urbano__"
+    Identifier "ThinNetworks TN-502 Screen 0"
+    Device "ThinNetworks TN-502 PCI Video Card 0"
+    DefaultDepth 16
+EndSection
+
+Section "Screen"
     MatchSeat "__fake-seat-proinfo-rural__"
     Identifier "ThinNetworks TN-502 Screen 0"
     Device "ThinNetworks TN-502 PCI Video Card 0"
