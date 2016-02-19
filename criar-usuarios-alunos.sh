@@ -21,4 +21,4 @@ install -m 644 pam_mount.conf.xml /etc/security
 install -m 755 freeze-session-auto /usr/local/bin
 install -d /home/freezetemplate/.config/autostart
 install -m 644 autostart/freeze-session-auto.desktop /home/freezetemplate/.config/autostart
-chown -R freezetemplate:freezetemplate /home/freezetemplate/.config/autostart
+chown -R freezetemplate:freezetemplate /home/freezetemplate
