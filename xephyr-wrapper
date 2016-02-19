@@ -16,4 +16,4 @@ xwininfo -root >/dev/null &
 sleep 1
 kill ${!}
 
-exec Xephyr -xkb-rules evdev -xkb-layout br -xkb-model abnt2 "${@}"
+exec Xephyr -dpi 96 -xkb-rules evdev -xkb-layout br -xkb-model abnt2 "${@}"
