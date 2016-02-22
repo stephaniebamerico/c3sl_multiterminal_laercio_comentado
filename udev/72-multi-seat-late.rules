@@ -1,5 +1,1 @@
-# Exclua este arquivo (ou simplesmente comente a linha abaixo)
-# caso você queira configurar até 5 terminais.
-#
-# Exemplo: ProInfo Rural - pregão FNDE 68/2009 (2º lote)
 TAG=="seat", ENV{ID_FOR_SEAT}=="usb-pci-*-usb-*_[34]", ENV{ID_SEAT}="seat0", TAG-="master-of-seat"
