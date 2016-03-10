@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wifi_iface=$(ip -o link | grep wl | cut -d: -f2)
+wifi_iface=$(ip -o link | grep wl | cut -d: -f2 | awk '{print $1}')
 
 install -m 644 systemd/cabeada.network /etc/systemd/network
 
