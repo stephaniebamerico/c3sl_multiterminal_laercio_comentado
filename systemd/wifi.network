@@ -1,10 +1,10 @@
 # Configuração de IP dinâmico para redes cabeadas
 [Match]
-Name=en*
+Name=wl*
 
 [Network]
 DHCP=yes
 
 [DHCP]
 UseDomains=yes
-RouteMetric=10
+RouteMetric=20
