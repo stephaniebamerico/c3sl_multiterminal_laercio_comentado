@@ -1,7 +1,0 @@
-[Unit]
-Description=Service for Xorg server at display :90 (profile "proinfo-%i")
-
-[Service]
-ExecStartPre=/usr/local/bin/update-xorg-conf
-ExecStart=/usr/bin/X :90 -seat __fake-seat-proinfo-%i__ -dpms -s 0 -nocursor
-SuccessExitStatus=0 1

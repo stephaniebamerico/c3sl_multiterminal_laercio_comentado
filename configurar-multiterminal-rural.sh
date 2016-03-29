@@ -1,11 +1,12 @@
 #!/bin/bash
 
-install -m 644 systemd/xorg@.s* /etc/systemd/system
+install -m 644 systemd/xorg-daemon.s* /etc/systemd/system
 install -m 644 udev/71-* /etc/udev/rules.d
 
 install -d /etc/X11/xorg.conf.d
 install -m 644 xorg/99-tn502.conf.in /etc/X11/xorg.conf.d
 install -m 755 update-xorg-conf /usr/local/bin
+install -m 755 xorg-daemon /usr/local/bin
 
 install -d /etc/xdg/lightdm/lightdm.conf.d
 install -m 644 lightdm/xephyr*.conf /etc/xdg/lightdm/lightdm.conf.d
@@ -16,8 +17,8 @@ ln -s xephyr-wrapper /usr/local/bin/xephyr-wrapper-0
 ln -s xephyr-wrapper /usr/local/bin/xephyr-wrapper-1
 
 update-xorg-conf
-systemctl enable xorg@rural.socket
-systemctl start xorg@rural.socket
+systemctl enable xorg-daemon.socket
+systemctl start xorg-daemon.socket
 
 apt-add-repository ppa:ubuntu-multiseat/ppa
 apt update
