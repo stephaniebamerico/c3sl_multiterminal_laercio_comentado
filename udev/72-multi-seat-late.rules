@@ -1,1 +1,1 @@
-TAG=="seat", ENV{ID_FOR_SEAT}=="usb-pci-*-usb-*_[34]", ENV{ID_SEAT}="seat0", TAG-="master-of-seat"
+TAG=="seat", ENV{ID_FOR_SEAT}=="usb-pci-*-usb-*_[34]", PROGRAM="/bin/sh -c '/usr/bin/lspci | /bin/grep -c SM501'", RESULT=="1", ENV{ID_SEAT}="seat0", TAG-="master-of-seat"
