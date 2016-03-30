@@ -11,6 +11,7 @@ install -m 755 xorg-daemon /usr/local/bin
 install -d /etc/xdg/lightdm/lightdm.conf.d
 install -m 644 lightdm/xephyr*.conf /etc/xdg/lightdm/lightdm.conf.d
 install -m 644 lightdm/autologin.conf /etc/xdg/lightdm/lightdm.conf.d
+install -m 644 lightdm/numlockx.conf /etc/xdg/lightdm/lightdm.conf.d
 
 install -m 755 xephyr-wrapper /usr/local/bin
 ln -s xephyr-wrapper /usr/local/bin/xephyr-wrapper-0
@@ -23,7 +24,7 @@ systemctl start xorg-daemon.socket
 apt-add-repository ppa:ubuntu-multiseat/ppa
 apt update
 apt -y upgrade
-apt -y install xserver-xorg-video-siliconmotion xserver-xephyr compton
+apt -y install xserver-xorg-video-siliconmotion xserver-xephyr compton numlockx
 
 udevadm trigger
 systemctl restart lightdm
