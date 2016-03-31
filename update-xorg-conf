@@ -1,14 +1,17 @@
 #!/bin/bash
-xorgconf=/etc/X11/xorg.conf.d/99-tn502.conf
-if [ ! -f ${xorgconf} -a -f ${xorgconf}.in ]
-then
-    index=0
-    cp ${xorgconf}.in ${xorgconf}
-    while read -r line
+xorgconf_1=/etc/X11/xorg.conf.d/99-proinfo-urbano.conf
+xorgconf_2=/etc/X11/xorg.conf.d/99-proinfo-rural.conf
+index=1
+
+while read -r line
+do
+    address=$(echo "${line}" | cut -d' ' -f1 | tr . :)
+    echo TN502_ADDRESS_${index} = ${address}
+
+    for xorgconf in ${xorgconf_1} ${xorgconf_2}
     do
-        address=$(echo "${line}" | cut -d' ' -f1 | tr . :)
-        echo TN502_ADDRESS_${index} = ${address}
-        sed -i "s/@TN502_ADDRESS_${index}@/${address}/" ${xorgconf}
-        index=$(( index + 1 ))
-    done < <(lspci | grep SM501)
-fi
+        sed -i "s/\(BusID \"PCI:\).*\(\"\)/\1${address}\2/${index}" ${xorgconf}
+    done
+
+    index=$(( index + 1 ))
+done < <(lspci | grep SM501)

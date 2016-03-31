@@ -1,7 +1,4 @@
 #!/bin/sh
-case "$(lspci | grep -c SM501)" in
-    1) pregao=urbano ;;
-    2) pregao=rural ;;
-    *) exit 2 ;;
-esac
-exec Xorg ${1} -seat __fake-seat-proinfo-${pregao}__ -dpms -s 0 -nocursor
+num_cards=$(lspci | grep -c SM501)
+[ ${num_cards} -ne 1 -a ${num_cards} -ne 2 ] && exit 2
+exec Xorg ${1} -seat __fake-seat-${num_cards}__ -dpms -s 0 -nocursor
