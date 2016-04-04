@@ -20,7 +20,7 @@
 
 1. Instale o seu sabor preferido do Ubuntu 16.04 LTS.
 2. Identifique as portas USB traseiras de cada um dos seus computadores seguindo [este roteiro](#), reservando as portas USB 1 e 2 para o segundo e terceiro terminais, respectivamente.
-  * Nos computadores do ProInfo Rural, as portas USB 3 e 4 são reservadas para o terceiro e quarto terminais, respectivamente. Nos do ProInfo Urbano, por sua vez, estas podem ser livremente utilizadas no primeiro terminal.
+  * Nos computadores do ProInfo Rural, as portas USB 3 e 4 são reservadas para o quarto e quinto terminais, respectivamente. Nos do ProInfo Urbano, por sua vez, estas podem ser livremente utilizadas no primeiro terminal.
   * Em todos os casos, as portas USB frontais podem ser usadas livremente no primeiro terminal.
 3. Baixe este repositório (`git clone http://gitlab.sme-mogidascruzes.sp.gov.br/pte/proinfo-ubuntu-config.git`).
 4. Execute o script `criar-usuarios-alunos.sh`.
