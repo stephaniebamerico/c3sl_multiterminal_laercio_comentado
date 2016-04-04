@@ -35,6 +35,6 @@ Caso algum de seus computadores seja afetado pelo [bug da tela listrada](../../w
 1. Instale o Linux Educacional 5.0 a partir da ISO disponível na [página de suporte do Paraná Digital](http://www.prdsuporte.seed.pr.gov.br/uploads/Linux-Educacional_5.0.2-1-escola-le5-stable-i386-20150817.iso).
   * Reserve 8 GB no final do disco rígido para instalar o LE 5.0.
   * **Não instale o gerenciador de boot do LE 5.0 na MBR do disco rígido!** Instale-o na raiz da própria partição em que o LE 5.0 está sendo instalado.
-2. Configure o multiterminal no LE 5.0 seguindo [este roteiro](#). **Não é necessário completar a associação de teclados/mouses, tampouco ativar a licença do Userful Multiseat**.
+2. Configure o multiterminal no LE 5.0 seguindo [este roteiro](wikis/Configuracao-do-multiterminal-no-Linux-Educacional-5-0). **Não é necessário completar a associação de teclados/mouses, tampouco ativar a licença do Userful Multiseat**.
 3. Reinicie o computador de volta para o Ubuntu 16.04 LTS e execute o script `contornar-bug-tela-listrada.sh` que consta desta solução.
 4. Desligue e ligue novamente o computador.
