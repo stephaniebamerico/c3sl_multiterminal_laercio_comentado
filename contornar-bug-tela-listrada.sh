@@ -44,9 +44,7 @@ echo "       Índice correspondente no menu do GRUB: ${indice}."
 
 install -m 644 systemd/le-nextboot-* /etc/systemd/system
 
-systemctl enable le-nextboot-read-write@${indice}
-systemctl enable le-nextboot-reboot
-
+systemctl enable le-nextboot-poweroff@${indice}
 grub-reboot ${indice}
 
 mount ${particao} /mnt
