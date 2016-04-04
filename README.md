@@ -28,7 +28,7 @@
 6. Execuhe o script `reconfigurar-rede.sh`.
 7. Execute o script `configurar-multiterminal.sh`.
 
-Caso algum de seus computadores seja afetado pelo [bug da tela listrada](#), os seguintes passos adicionais são necessários para utilizá-lo em sua capacidade máxima (3 terminais no ProInfo Urbano e 4~5 terminais no ProInfo Rural):
+Caso algum de seus computadores seja afetado pelo [bug da tela listrada](../../wikis/O-bug-da-tela-listrada), os seguintes passos adicionais são necessários para utilizá-lo em sua capacidade máxima (3 terminais no ProInfo Urbano e 4~5 terminais no ProInfo Rural):
 
 1. Instale o Linux Educacional 5.0 a partir da ISO disponível na [página de suporte do Paraná Digital](http://www.prdsuporte.seed.pr.gov.br/uploads/Linux-Educacional_5.0.2-1-escola-le5-stable-i386-20150817.iso).
   * Reserve 8 GB no final do disco rígido para instalar o LE 5.0.
