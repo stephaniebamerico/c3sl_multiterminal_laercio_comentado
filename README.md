@@ -37,14 +37,12 @@ Os sabores e arquiteturas do Ubuntu que nós recomendamos para os computadores d
 3. Conecte os monitores e hubs USB associados a cada terminal, segundo [esta tabela](../../wikis/Tabela-de-associacao-das-portas-USB-e-saidas-de-video).
 4. Baixe este repositório (`git clone http://gitlab.sme-mogidascruzes.sp.gov.br/pte/proinfo-ubuntu-config.git`).
 5. Execute o script `criar-usuarios-alunos.sh`.
-6. Execuhe o script `reconfigurar-rede.sh`.
+6. **[OPCIONAL]** Execute o script `reconfigurar-rede.sh`.
 7. Execute o script `configurar-multiterminal.sh`.
 
 Caso algum de seus computadores seja afetado pelo [bug da tela listrada](../../wikis/O-bug-da-tela-listrada), os seguintes passos adicionais são necessários para utilizá-lo em sua capacidade máxima (3 terminais no ProInfo Urbano e 4~5 terminais no ProInfo Rural):
 
-1. Instale o Linux Educacional 5.0 a partir da ISO disponível na [página de suporte do Paraná Digital](http://www.prdsuporte.seed.pr.gov.br/uploads/Linux-Educacional_5.0.2-1-escola-le5-stable-i386-20150817.iso).
-  * Reserve 8 GB no final do disco rígido para instalar o LE 5.0.
-  * **Não instale o gerenciador de boot do LE 5.0 na MBR do disco rígido!** Instale-o na raiz da própria partição em que o LE 5.0 está sendo instalado.
+1. Instale o Linux Educacional 5.0 a partir da ISO disponível na [página de suporte do Paraná Digital](http://www.prdsuporte.seed.pr.gov.br/uploads/Linux-Educacional_5.0.2-1-escola-le5-stable-i386-20150817.iso), seguindo [este roteiro](wikis/Instalacao-do-Linux-Educacional-5-0).
 2. Configure o multiterminal no LE 5.0 seguindo [este roteiro](wikis/Configuracao-do-multiterminal-no-Linux-Educacional-5-0). **Não é necessário completar a associação de teclados/mouses, tampouco ativar a licença do Userful Multiseat**.
 3. Reinicie o computador de volta para o Ubuntu 16.04 LTS e execute o script `contornar-bug-tela-listrada.sh` que consta desta solução.
 4. Desligue e ligue novamente o computador.
