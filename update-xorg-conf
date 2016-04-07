@@ -10,12 +10,12 @@ do
 
     for xorgconf in ${xorgconf_1} ${xorgconf_2}
     do
-        awk -i inplace -v n=${index} -v address=${address} \
+        awk -v n=${index} -v address=${address} \
             '$1 == "BusID" {
                 if (++count == n)
                     sub(/[0-9]+:[0-9]+:[0-9]+/, address, $0)
              }
-             { print }' ${xorgconf}
+             { print }' ${xorgconf} > ${xorgconf}.tmp && mv ${xorgconf}.tmp ${xorgconf}
     done
 
     index=$(( index + 1 ))
