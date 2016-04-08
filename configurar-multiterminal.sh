@@ -11,7 +11,7 @@ install -m 755 xorg-daemon /usr/local/bin
 install -d /etc/xdg/lightdm/lightdm.conf.d
 install -m 644 lightdm/*.conf /etc/xdg/lightdm/lightdm.conf.d
 
-update-xorg-conf
+update-xorg-conf SM501 /etc/X11/xorg.conf.d/99-proinfo-*.conf
 systemctl enable xorg-daemon.socket
 systemctl start xorg-daemon.socket
 
