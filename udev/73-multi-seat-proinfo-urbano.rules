@@ -1,0 +1,2 @@
+# If there's only a single TN-502 card, give the associated USB hubs back to seat0.
+TAG=="seat", ENV{ID_SEAT}=="seat-[LV]1", PROGRAM="/bin/sh -c '/usr/bin/lspci | /bin/grep -c SM501'", RESULT=="1", ENV{ID_SEAT}="seat0", TAG-="master-of-seat"
