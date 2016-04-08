@@ -23,24 +23,25 @@
 # On Debian GNU/Linux systems, the complete text of the GNU General
 # Public License can be found in `/usr/share/common-licenses/GPL'.
 ###########################################################################
-xorgconf_1=/etc/X11/xorg.conf.d/99-proinfo-urbano.conf
-xorgconf_2=/etc/X11/xorg.conf.d/99-proinfo-rural.conf
 index=1
+pattern="${1}"
+shift
 
 while read -r line
 do
-    address=$(echo "${line}" | cut -d' ' -f1 | tr . :)
+    address=$(echo "${line}" | awk '{ sub(/\./, ":", $1) } { print $1 }')
     echo TN502_ADDRESS_${index} = ${address}
 
-    for xorgconf in ${xorgconf_1} ${xorgconf_2}
+    for xorgconf in "${@}"
     do
         awk -v n=${index} -v address=${address} \
             '$1 == "BusID" {
-                if (++count == n)
+                if (++count == n) {
                     sub(/[0-9]+:[0-9]+:[0-9]+/, address, $0)
+                }
              }
              { print }' ${xorgconf} > ${xorgconf}.tmp && mv ${xorgconf}.tmp ${xorgconf}
     done
 
     index=$(( index + 1 ))
-done < <(lspci | grep SM501)
+done < <(lspci | grep "${pattern}")
