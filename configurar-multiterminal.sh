@@ -5,6 +5,7 @@ install -m 644 udev/* /etc/udev/rules.d
 
 install -d /etc/X11/xorg.conf.d
 install -m 644 xorg/*.conf /etc/X11/xorg.conf.d
+install -m 755 seat-attach-assistant /usr/local/bin
 install -m 755 update-xorg-conf /usr/local/bin
 install -m 755 xorg-daemon /usr/local/bin
 
