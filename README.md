@@ -22,11 +22,11 @@
 
 Os sabores e arquiteturas do Ubuntu que nós recomendamos para os computadores do ProInfo são os seguintes:
 
-| Tipo de computador                            | Sabor do Ubuntu    | arquitetura |
-|:---------------------------------------------:|:------------------:|:-----------:|
-| multiterminal com menos de 2GB de memória RAM | Xubuntu ou Lubuntu | 32 bits     |
-| multiterminal com 2GB de memória RAM ou mais  | Xubuntu            | 64 bits     |
-| servidor                                      | Ubuntu MATE        | 64 bits     |
+| Tipo de computador                            | Sabor do Ubuntu                                                                                                                                                                                             | arquitetura |
+|:---------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------:|
+| multiterminal com menos de 2GB de memória RAM | [Xubuntu](http://cdimage.ubuntu.com/xubuntu/releases/xenial/release/xubuntu-16.04-desktop-i386.iso) ou [Lubuntu](http://cdimage.ubuntu.com/lubuntu/releases/16.04/release/lubuntu-16.04-desktop-i386.iso)   | 32 bits     |
+| multiterminal com 2GB de memória RAM ou mais  | [Xubuntu](http://cdimage.ubuntu.com/xubuntu/releases/xenial/release/xubuntu-16.04-desktop-amd64.iso) ou [Lubuntu](http://cdimage.ubuntu.com/lubuntu/releases/16.04/release/lubuntu-16.04-desktop-amd64.iso) | 64 bits     |
+| servidor                                      | [Ubuntu MATE](http://cdimage.ubuntu.com/ubuntu-mate/releases/xenial/release/ubuntu-mate-16.04-desktop-amd64.iso)                                                                                            | 64 bits     |
 
 ## Resumo do roteiro
 
