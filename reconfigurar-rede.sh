@@ -2,6 +2,9 @@
 
 install -m 644 systemd/cabeada.network /etc/systemd/network
 
+install -m 644 autostart-disable-nm/*.desktop /home/freezetemplate/.config/autostart
+chown -R freezetemplate:freezetemplate /home/freezetemplate/.config/autostart
+
 if [ -n "${wifi_iface}" ]
 then
     install -m 644 systemd/wifi.network /etc/systemd/network
