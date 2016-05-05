@@ -22,6 +22,8 @@ install -m 755 freeze-session-auto /usr/local/bin
 install -d /home/freezetemplate/.config/autostart
 install -m 644 autostart/freeze-session-auto.desktop /home/freezetemplate/.config/autostart
 install -m 644 autostart-disable/*.desktop /home/freezetemplate/.config/autostart
+install -d /home/freezetemplate/.config/Thunar
+install -m 644 thunar/uca.xml /home/freezetemplate/.config/Thunar
 
 mkdir -m 0777 /var/freeze-data
 ln -s /var/freeze-data "/home/freezetemplate/SALVAR AQUI!"
