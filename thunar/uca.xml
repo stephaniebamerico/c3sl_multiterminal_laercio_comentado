@@ -4,7 +4,7 @@
 	<icon>utilities-terminal</icon>
 	<name>Abra o Emulador de Terminal aqui</name>
 	<unique-id>1461173151717256-1</unique-id>
-	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<command>xfce4-terminal --working-directory %f</command>
 	<description>Abre um emulador de terminal nesta pasta</description>
 	<patterns>*</patterns>
 	<directories/>
@@ -13,7 +13,7 @@
 	<icon>utilities-terminal</icon>
 	<name>Abra o Emulador de Terminal aqui (com privilégios administrativos)</name>
 	<unique-id>1462472571145703-7</unique-id>
-	<command>pkexec exo-open --working-directory %f --launch TerminalEmulator</command>
+	<command>pkexec xfce4-terminal --working-directory %f</command>
 	<description>Abre um emulador de terminal nesta pasta como root</description>
 	<patterns>*</patterns>
 	<directories/>
@@ -31,7 +31,7 @@
 	<icon>system-file-manager</icon>
 	<name>Abrir esta pasta com privilégios administrativos</name>
 	<unique-id>1462472627191725-8</unique-id>
-	<command>pkexec exo-open --launch FileManager %f</command>
+	<command>pkexec thunar %f</command>
 	<description>Abre a pasta selecionada com privilégios administrativos</description>
 	<patterns>*</patterns>
 	<directories/>

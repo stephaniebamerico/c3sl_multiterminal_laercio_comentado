@@ -17,6 +17,7 @@ install -d /etc/xdg/lightdm/lightdm.conf.d
 install -m 644 lightdm/96-disable-guest.conf /etc/xdg/lightdm/lightdm.conf.d
 install -m 755 mount-wrapper /usr/local/sbin
 install -m 644 pam_mount.conf.xml /etc/security
+install -m 644 org.xfce.terminal.policy /usr/share/polkit-1/actions
 
 install -m 755 freeze-session-auto /usr/local/bin
 install -d /home/freezetemplate/.config/autostart
