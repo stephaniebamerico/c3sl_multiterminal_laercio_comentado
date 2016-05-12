@@ -17,6 +17,7 @@ supertuxkart
 pingus
 chromium-browser
 adobe-flashplugin
+ssvnc
 epoptes-client
 ssh
 nginx-light
