@@ -1,0 +1,11 @@
+#!/bin/sh
+apt autoremove
+apt clean
+rm /etc/epoptes/server.crt
+rm /home/freezetemplate/.cache/upstart/*.log
+rm /home/freezetemplate/.{X,ICE}authority
+sed -i -e 's/^.*ComputerName.*$//g' /home/freezetemplate/.wine/system.reg
+rm -rf /root/.ssh
+rm -rf /root/.bash_history
+rm -rf /home/orientador/.ssh
+rm -rf /root/orientador/.bash_history
