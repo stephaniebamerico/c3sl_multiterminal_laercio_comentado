@@ -27,3 +27,5 @@ OMNITUX="http://downloads.sourceforge.net/project/omnitux/omnitux/v1.2.1/omnitux
 wget -c $OMNITUX -O /tmp/omnitux_1.2.1_all.deb && apt install /tmp/omnitux_1.2.1_all.deb
 
 apt install $PACOTES
+
+install -m 644 tuxpaint.conf /etc/tuxpaint
