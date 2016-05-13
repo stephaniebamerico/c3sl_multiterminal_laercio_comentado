@@ -8,6 +8,7 @@ install -m 644 xorg/9[78]*.conf /etc/X11/xorg.conf.d
 install -m 755 seat-attach-assistant /usr/local/bin
 install -m 755 update-xorg-conf /usr/local/bin
 install -m 755 xorg-daemon /usr/local/bin
+install -m 755 xephyr-wrapper /usr/local/bin
 
 install -d /etc/xdg/lightdm/lightdm.conf.d
 install -m 644 lightdm/*.conf /etc/xdg/lightdm/lightdm.conf.d
