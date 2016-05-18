@@ -18,4 +18,4 @@ Icon=utilities-terminal
 
 [X-Action-Profile profile-folder]
 MimeTypes=inode/directory;
-Exec=lxterminal-pkexec --working-directory=%u
+Exec=lxterminal-pkexec --working-directory=%f
