@@ -4,7 +4,7 @@ PACOTES="
 ubuntu-edu-preschool
 ubuntu-edu-primary
 ubuntu-edu-secondary
-language-pack-kde-pt
+kde-l10n-ptbr
 gparted
 pinta
 vlc
