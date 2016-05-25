@@ -2,10 +2,16 @@
 apt autoremove
 apt clean
 rm /etc/epoptes/server.crt
-rm /home/freezetemplate/.cache/upstart/*.log
-rm /home/freezetemplate/.{X,ICE}authority
 sed -i -e 's/^.*ComputerName.*$//g' /home/freezetemplate/.wine/system.reg
 rm -rf /root/.ssh
 rm -rf /root/.bash_history
+rm -rf /home/freezetemplate/.ssh
+rm -rf /home/freezetemplate/.bash_history
+rm -rf /home/freezetemplate/.cache/upstart/*.log
+rm -rf /home/freezetemplate/.cache/xfce4/xfce4-appfinder/history
+rm -rf /home/freezetemplate/.{X,ICE}authority
 rm -rf /home/orientador/.ssh
-rm -rf /root/orientador/.bash_history
+rm -rf /home/orientador/.bash_history
+rm -rf /home/orientador/.cache/upstart/*.log
+rm -rf /home/orientador/.cache/xfce4/xfce4-appfinder/history
+rm -rf /home/oriendador/.{X,ICE}authority
