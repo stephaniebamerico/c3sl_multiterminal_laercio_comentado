@@ -10,8 +10,8 @@ rm -rf /home/freezetemplate/.bash_history
 rm -rf /home/freezetemplate/.cache/upstart/*.log
 rm -rf /home/freezetemplate/.cache/xfce4/xfce4-appfinder/history
 rm -rf /home/freezetemplate/.{X,ICE}authority
-rm -rf /home/orientador/.ssh
-rm -rf /home/orientador/.bash_history
-rm -rf /home/orientador/.cache/upstart/*.log
-rm -rf /home/orientador/.cache/xfce4/xfce4-appfinder/history
-rm -rf /home/oriendador/.{X,ICE}authority
+rm -rf /home/admin/.ssh
+rm -rf /home/admin/.bash_history
+rm -rf /home/admin/.cache/upstart/*.log
+rm -rf /home/admin/.cache/xfce4/xfce4-appfinder/history
+rm -rf /home/admin/.{X,ICE}authority
