@@ -6,7 +6,8 @@ DefaultDependencies=no
 
 [Service]
 Type=oneshot
-ExecStart=/usr/sbin/grub-reboot %i
+ENvironmentFile=/etc/le-nextboot.conf
+ExecStart=/bin/sh -c "${LE_NEXTBOOT_ENABLE} && grub-reboot ${LE_NEXTBOOT_INDEX}"
 
 [Install]
 WantedBy=sysinit.target
