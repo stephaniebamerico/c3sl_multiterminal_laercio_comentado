@@ -1,5 +1,5 @@
 [Unit]
-Description=Cancel scheduled boot to Linux Educacional
+Description=Cancel scheduled boot to Userful Rescue Live
 After=getty@tty1.service display-manager.service
 Before=systemd-reboot.service
 DefaultDependencies=no

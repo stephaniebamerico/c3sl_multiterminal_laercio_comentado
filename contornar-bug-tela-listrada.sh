@@ -1,66 +1,63 @@
 #!/bin/bash
 
 indice=0
-particao=
-le5_encontrado=false
+userful_encontrado=false
 
-encontrar_le5() {
-    while read -r linha
-    do
-        if echo "${linha}" | grep "menuentry.*Linux Educacional 5.0" >/dev/null
-        then
-            particao=$(echo ${linha} | cut -d' ' -f7 | cut -d')' -f1)
-            le5_encontrado=true
-            break
-        else
-            indice=$(( indice + 1 ))
-        fi
-    done < <(grep "^menuentry\|submenu" /boot/grub/grub.cfg)
-}
-
-encontrar_le5
-
-if ! ${le5_encontrado}
+if ! [ -d /boot/userful-rescue -a -f /boot/userful-rescue/userful-rescue-live-20160628-i386.iso ]
 then
-    # Partição do LE 5.0 não detectada.
-    # Atualizando o menu do GRUB e tentando novamente...
-    indice=0
-    update-grub
-    encontrar_le5
-fi
+    cat << EOF
 
-if ! ${le5_encontrado}
-then
-    echo
-    echo "[ERRO] Partição do Linux Educacional 5.0 não detectada!"
-    echo "       Certifique-se de que o Linux Educacional 5.0"
-    echo "       está instalado em uma outra partição."
+[ERRO] Userful Rescue Live não encontrado!
+       Baixe a ISO do Userful Rescue Live no endereço
+
+           https://drive.google.com/open?id=0B_0RrXAKZ1hbdnRvcGRuSFc2Nkk
+
+       e salve-a na pasta /boot/userful-rescue.
+       Depois disso, execute este script novamente.
+
+EOF
     exit 1
 fi
 
-echo
-echo "[INFO] Partição do Linux Educacional 5.0 encontrada em ${particao}."
-echo "       Índice correspondente no menu do GRUB: ${indice}."
+install -m 644 userful/42_userful-rescue /etc/grub.d
+update-grub
 
-install -m 644 systemd/le-nextboot-* /etc/systemd/system
+while read -r linha
+do
+    if echo "${linha}" | grep "menuentry.*Userful Rescue Live" >/dev/null
+    then
+        userful_encontrado=true
+        break
+    else
+        indice=$(( indice + 1 ))
+    fi
+done < <(grep "^menuentry\|submenu" /boot/grub/grub.cfg)
 
-cat > /etc/le-nextboot.conf << EOF
-LE_NEXTBOOT_ENABLE=true
-LE_NEXTBOOT_INDEX=${indice}
+
+cat << EOF
+
+[INFO] Userful Rescue Live encontrado.
+       Índice correspondente no menu do GRUB: ${indice}.
+
 EOF
 
-systemctl enable le-nextboot-poweroff.service
+install -m 644 systemd/userful-rescue-nextboot-* /etc/systemd/system
+
+cat > /etc/userful-rescue-nextboot.conf << EOF
+USERFUL_RESCUE_NEXTBOOT_ENABLE=true
+USERFUL_RESCUE_NEXTBOOT_INDEX=${indice}
+EOF
+
+systemctl enable userful-rescue-nextboot-poweroff.service
 grub-reboot ${indice}
 
-mount ${particao} /mnt
-install -m 644 userful/auto_login.conf /mnt/etc/userful
-install -m 755 userful/auto-reboot /mnt/usr/local/bin
-umount /mnt
+cat << EOF
 
-echo
-echo "[AVISO] Agora você deve desligar o computador e ligá-lo novamente."
-echo "        O computador deve iniciar no Linux Educacional 5.0 e reiniciar"
-echo "        automaticamente de volta para este sistema."
-echo
-echo "        Uma vez concluído o processo, você pode reiniciar o computador"
-echo "        sempre que necessário."
+[AVISO] Agora você deve desligar o computador e ligá-lo novamente.
+        O computador deve iniciar no Userful Rescue Live e reiniciar
+        automaticamente de volta para este sistema.
+
+        Uma vez concluído o processo, você pode reiniciar o computador
+        sempre que necessário.
+
+EOF
