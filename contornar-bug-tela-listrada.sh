@@ -19,7 +19,7 @@ EOF
     exit 1
 fi
 
-install -m 644 userful/42_userful-rescue /etc/grub.d
+install -m 755 userful/42_userful-rescue /etc/grub.d
 update-grub
 
 while read -r linha
