@@ -48,7 +48,8 @@ USERFUL_RESCUE_NEXTBOOT_ENABLE=true
 USERFUL_RESCUE_NEXTBOOT_INDEX=${indice}
 EOF
 
-systemctl enable userful-rescue-nextboot-poweroff.service
+systemctl enable userful-rescue-nextboot-read-write.service
+systemctl enable userful-rescue-nextboot-reboot.service
 grub-reboot ${indice}
 
 cat << EOF
