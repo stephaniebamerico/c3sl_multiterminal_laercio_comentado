@@ -6,7 +6,7 @@ DefaultDependencies=no
 
 [Service]
 Type=oneshot
-ENvironmentFile=/etc/userful-rescue-nextboot.conf
+EnvironmentFile=/etc/userful-rescue-nextboot.conf
 ExecStart=/bin/sh -c "${USERFUL_RESCUE_NEXTBOOT_ENABLE} && grub-reboot ${USERFUL_RESCUE_NEXTBOOT_INDEX}"
 
 [Install]
