@@ -20,7 +20,12 @@ systemctl start xorg-daemon.socket
 apt-add-repository ppa:ubuntu-multiseat/xephyr
 apt update
 apt -y upgrade
-apt -y install xserver-xorg-video-siliconmotion xserver-xephyr compton numlockx
+apt -y install xserver-xorg-video-siliconmotion compton numlockx xserver-{common,xorg-core,xephyr}=2:1.18.3-1ubuntu2.3+multiseat0
+
+for i in common xorg-core xephyr
+do
+    echo "xserver-$i hold" | sudo dpkg --set-selections
+done
 
 udevadm trigger
 systemctl restart lightdm
