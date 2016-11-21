@@ -1,6 +1,8 @@
 # Configuração do Ubuntu 16.04 LTS para computadores multiterminais do ProInfo
 
-**Aqui você encontra apenas algumas informações resumidas sobre este roteiro. A documentação completa está disponível em nosso [wiki](../../wikis/home).**
+**URGENTE: seu multiterminal parou de funcionar após uma atualização de sistema? Leia [isto](../../wikis/problemas-com-atualizacoes-de-sistema)!**
+
+*Aqui você encontra apenas algumas informações resumidas sobre este roteiro. A documentação completa está disponível em nosso [wiki](../../wikis/home).*
 
 ## Pregões contemplados por esta solução
 
