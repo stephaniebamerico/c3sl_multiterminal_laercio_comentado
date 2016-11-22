@@ -24,7 +24,8 @@ apt -y install xserver-xorg-video-siliconmotion compton numlockx xserver-{common
 
 for i in common xorg-core xephyr
 do
-    echo "xserver-$i hold" | sudo dpkg --set-selections
+    echo "xserver-$i hold" | dpkg --set-selections
+    [ -x /usr/bin/aptitude ] && aptitude hold xserver-$i
 done
 
 udevadm trigger
