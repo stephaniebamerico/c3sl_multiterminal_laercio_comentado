@@ -22,8 +22,6 @@ update-grub
 install -m 644 systemd/userful-rescue-nextboot-* /etc/systemd/system
 systemctl enable userful-rescue-nextboot-reboot.service
 systemctl enable userful-rescue-nextboot-read-write.service
-
-touch /etc/enable-userful-rescue
 systemctl start userful-rescue-nextboot-read-write.service
 
 cat << EOF

@@ -3,7 +3,6 @@ Description=Schedule next boot to Userful Rescue Live on system power on
 After=local-fs.target
 Before=sysinit.target
 DefaultDependencies=no
-ConditionPathExists=/etc/enable-userful-rescue
 
 [Service]
 Type=oneshot
