@@ -3,10 +3,11 @@ Description=Cancel scheduled boot to Userful Rescue Live
 After=getty@tty1.service display-manager.service
 Before=systemd-reboot.service
 DefaultDependencies=no
+ConditionPathExists=/etc/enable-userful-rescue
 
 [Service]
 Type=oneshot
-ExecStart=/usr/sbin/grub-reboot 0
+ExecStart=/usr/sbin/grub-editenv - unset next_entry
 
 [Install]
 WantedBy=reboot.target
