@@ -1,8 +1,5 @@
 #!/bin/bash
 
-indice=0
-userful_encontrado=false
-
 if ! [ -d /boot/userful-rescue -a -f /boot/userful-rescue/userful-rescue-live-20160628-i386.iso ]
 then
     cat << EOF
@@ -22,35 +19,12 @@ fi
 install -m 755 userful/42_userful-rescue /etc/grub.d
 update-grub
 
-while read -r linha
-do
-    if echo "${linha}" | grep "menuentry.*Userful Rescue Live" >/dev/null
-    then
-        userful_encontrado=true
-        break
-    else
-        indice=$(( indice + 1 ))
-    fi
-done < <(grep "^menuentry\|submenu" /boot/grub/grub.cfg)
-
-
-cat << EOF
-
-[INFO] Userful Rescue Live encontrado.
-       Índice correspondente no menu do GRUB: ${indice}.
-
-EOF
-
 install -m 644 systemd/userful-rescue-nextboot-* /etc/systemd/system
-
-cat > /etc/userful-rescue-nextboot.conf << EOF
-USERFUL_RESCUE_NEXTBOOT_ENABLE=true
-USERFUL_RESCUE_NEXTBOOT_INDEX=${indice}
-EOF
-
-systemctl enable userful-rescue-nextboot-read-write.service
 systemctl enable userful-rescue-nextboot-reboot.service
-grub-reboot ${indice}
+systemctl enable userful-rescue-nextboot-read-write.service
+
+touch /etc/enable-userful-rescue
+systemctl start userful-rescue-nextboot-read-write.service
 
 cat << EOF
 
