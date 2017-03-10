@@ -20,7 +20,7 @@ systemctl start xorg-daemon.socket
 apt-add-repository ppa:ubuntu-multiseat/xephyr
 apt update
 apt -y upgrade
-apt -y install xserver-xorg-video-siliconmotion compton numlockx xserver-{common,xorg-core,xephyr}=2:1.18.3-1ubuntu2.3+multiseat0
+apt -y --allow-downgrades install xserver-xorg-video-siliconmotion compton numlockx xserver-{common,xorg-core,xephyr}=2:1.18.3-1ubuntu2.3+multiseat0
 
 for i in common xorg-core xephyr
 do
