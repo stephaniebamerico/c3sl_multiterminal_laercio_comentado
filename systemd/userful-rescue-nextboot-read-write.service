@@ -3,11 +3,11 @@ Description=Schedule next boot to Userful Rescue Live on system power on
 After=local-fs.target
 Before=sysinit.target
 DefaultDependencies=no
+ConditionPathExists=/etc/enable-userful-rescue
 
 [Service]
 Type=oneshot
-EnvironmentFile=/etc/userful-rescue-nextboot.conf
-ExecStart=/bin/sh -c "${USERFUL_RESCUE_NEXTBOOT_ENABLE} && grub-reboot ${USERFUL_RESCUE_NEXTBOOT_INDEX}"
+ExecStart=/usr/sbin/grub-reboot "Userful Rescue Live"
 
 [Install]
 WantedBy=sysinit.target
