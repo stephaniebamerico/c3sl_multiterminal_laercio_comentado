@@ -32,7 +32,7 @@ for userful_iso in ${iso_list} ; do
   gettext_printf "Found Userful Rescue Live: %s\n" "${iso_file}" >&2
 
   cat << EOF
-menuentry '$(echo "Userful Rescue Live ${onstr}" | grub_quote)' {
+menuentry '$(echo "Userful Rescue Live" | grub_quote)' {
 ${grub_prep}
         set isofile="${rel_dirname%/}/${iso_file}"
         loopback loop \$isofile
