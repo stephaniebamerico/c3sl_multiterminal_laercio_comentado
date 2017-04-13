@@ -4,7 +4,7 @@ freeze_template_user="alunot"
 freeze_template_fullname="Modelo para Aluno"
 
 addgroup freeze
-adduser --gecos "${freeze_template_fullname}" --shell /bin/bash ${freeze_template_user}
+adduser --disabled-login --gecos "${freeze_template_fullname}" --shell /bin/bash ${freeze_template_user}
 echo "${freeze_template_user}:aluno" | chpasswd
 
 for i in 0 1 2 3 4
