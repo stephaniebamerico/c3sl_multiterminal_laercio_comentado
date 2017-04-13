@@ -16,7 +16,8 @@ EOF
     exit 1
 fi
 
-install -m 755 userful/42_userful-rescue /etc/grub.d
+install -m 755 userful-rescue-{enable,disable} /usr/local/bin
+install -m 755 grub/42_userful-rescue /etc/grub.d
 update-grub
 
 install -m 644 systemd/userful-rescue-nextboot-* /etc/systemd/system
