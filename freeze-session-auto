@@ -44,3 +44,5 @@ for i in ${HOME}/.wine/userdef.reg \
 do
     [ -f ${i} ] && sed -i -e "s@freezetemplate@${USER}@g" ${i}
 done
+
+auto-unlock-gnome-keyring

@@ -1,11 +1,11 @@
 #!/bin/bash
 
-freeze_template_user="alunot"
-freeze_template_fullname="Modelo para Aluno"
+freeze_template_user="freezetemplate"
+freeze_template_fullname="Modelo para Freeze"
 
 addgroup freeze
 adduser --disabled-login --gecos "${freeze_template_fullname}" --shell /bin/bash ${freeze_template_user}
-echo "${freeze_template_user}:aluno" | chpasswd
+echo "${freeze_template_user}:freeze" | chpasswd
 
 for i in 0 1 2 3 4
 do
@@ -25,6 +25,7 @@ install -m 644 pam_mount.conf.xml /etc/security
 install -m 644 xubuntu/*.policy /usr/share/polkit-1/actions
 
 install -m 755 freeze-session-auto /usr/local/bin
+install -m 755 auto-unlock-gnome-keyring /usr/local/bin
 install -d /home/${freeze_template_user}/.config/autostart
 install -m 644 autostart/freeze-session-auto.desktop /home/${freeze_template_user}/.config/autostart
 install -m 644 autostart-disable/*.desktop /home/${freeze_template_user}/.config/autostart
