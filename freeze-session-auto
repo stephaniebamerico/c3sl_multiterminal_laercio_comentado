@@ -45,4 +45,4 @@ do
     [ -f ${i} ] && sed -i -e "s@freezetemplate@${USER}@g" ${i}
 done
 
-auto-unlock-gnome-keyring
+python -c "import gnomekeyring; gnomekeyring.unlock_sync(None, 'freeze')"

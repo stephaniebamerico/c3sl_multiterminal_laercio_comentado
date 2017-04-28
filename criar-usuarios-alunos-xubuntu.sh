@@ -11,11 +11,11 @@ for i in 0 1 2 3 4
 do
     adduser --disabled-login --gecos "Aluno #${i}" --shell /bin/bash aluno${i}
     adduser aluno${i} freeze
-    echo "aluno${i}:aluno" | chpasswd
+    echo "aluno${i}:aluno${i}" | chpasswd
 done
 
 apt update
-apt -y install libpam-mount bindfs
+apt -y install libpam-mount bindfs python-gnomekeyring
 
 install -d /etc/xdg/lightdm/lightdm.conf.d
 install -m 644 lightdm/96-disable-guest.conf /etc/xdg/lightdm/lightdm.conf.d
