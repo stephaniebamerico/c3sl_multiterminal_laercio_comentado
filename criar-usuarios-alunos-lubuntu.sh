@@ -29,7 +29,6 @@ install -m 644 lubuntu/*.desktop /usr/local/share/file-manager/actions
 install -m 755 lubuntu/*-pkexec /usr/local/bin
 
 install -m 755 freeze-session-auto /usr/local/bin
-install -m 755 auto-unlock-gnome-keyring /usr/local/bin
 install -d /home/${freeze_template_user}/.config/autostart
 install -m 644 autostart/freeze-session-auto.desktop /home/${freeze_template_user}/.config/autostart
 install -m 644 autostart-disable/*.desktop /home/${freeze_template_user}/.config/autostart
